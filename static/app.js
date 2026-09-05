@@ -668,6 +668,33 @@
     });
     actionsRow.appendChild(remixBtn);
 
+    const saveBtn = document.createElement('button');
+    saveBtn.className = 'canvas-action-save';
+    saveBtn.innerHTML = '💾 Salva nel Profilo';
+    saveBtn.addEventListener('click', async () => {
+      if (!window.agosSupabase) return;
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = '⏳ Salvataggio...';
+      const res = await window.agosSupabase.saveCreation({
+        prompt: promptText,
+        model: modelName,
+        provider: providerName,
+        ratio: ratio,
+        imageUrl: msg.image,
+        meta: msg.meta || {}
+      });
+      if (res && res.error) {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = '⚠️ ' + res.error;
+        setTimeout(() => { saveBtn.innerHTML = '💾 Salva nel Profilo'; }, 3000);
+      } else {
+        saveBtn.classList.add('saved');
+        saveBtn.innerHTML = '✅ Salvato nel Profilo';
+        if (typeof loadUserCreations === 'function') loadUserCreations();
+      }
+    });
+    actionsRow.appendChild(saveBtn);
+
     infoCol.appendChild(topWrap);
     infoCol.appendChild(actionsRow);
 
@@ -1622,6 +1649,321 @@
     }
   });
 
+  // =========================================================================
+  // SUPABASE & MY PROFILE INTEGRATION (Official agtechdesigne Studio)
+  // =========================================================================
+  const userProfileBtn = $('userProfileBtn');
+  const profileModal = $('profileModal');
+  const closeProfileBtn = $('closeProfileBtn');
+  const headerUserAvatar = $('headerUserAvatar');
+  const headerUserDot = $('headerUserDot');
+  const headerUserName = $('headerUserName');
+
+  const profAvatarImg = $('profAvatarImg');
+  const profDisplayName = $('profDisplayName');
+  const profTierBadge = $('profTierBadge');
+  const profEmail = $('profEmail');
+  const profCreditsBig = $('profCreditsBig');
+  const profRefillBtn = $('profRefillBtn');
+
+  const profUnauthenticatedView = $('profUnauthenticatedView');
+  const profAuthenticatedView = $('profAuthenticatedView');
+  const googleLoginBtn = $('googleLoginBtn');
+  const logoutBtn = $('logoutBtn');
+  const profUserIdShort = $('profUserIdShort');
+  const profPlanName = $('profPlanName');
+  const profUserRole = $('profUserRole');
+
+  const userCreationsGrid = $('userCreationsGrid');
+  const emptyCreationsMsg = $('emptyCreationsMsg');
+  const profCreationsCount = $('profCreationsCount');
+  const brandTemplatesGrid = $('brandTemplatesGrid');
+  const profTemplatesCount = $('profTemplatesCount');
+
+  const settingDefaultModel = $('settingDefaultModel');
+  const settingDefaultRatio = $('settingDefaultRatio');
+  const settingBrandPrompt = $('settingBrandPrompt');
+  const saveSettingsBtn = $('saveSettingsBtn');
+  const settingsFeedback = $('settingsFeedback');
+
+  function openProfileModal() {
+    if (profileModal) profileModal.style.display = 'flex';
+  }
+
+  function closeProfileModal() {
+    if (profileModal) profileModal.style.display = 'none';
+  }
+
+  if (userProfileBtn) userProfileBtn.addEventListener('click', openProfileModal);
+  if (closeProfileBtn) closeProfileBtn.addEventListener('click', closeProfileModal);
+  if (profileModal) {
+    profileModal.addEventListener('click', (e) => {
+      if (e.target === profileModal) closeProfileModal();
+    });
+  }
+
+  // Profile Tab switching
+  const profTabButtons = document.querySelectorAll('.prof-tab-btn');
+  profTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      profTabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const targetTab = btn.getAttribute('data-tab');
+      document.querySelectorAll('.profile-tab-content').forEach(tc => tc.classList.remove('active'));
+      const activeContent = $(`profTab${targetTab.charAt(0).toUpperCase() + targetTab.slice(1)}`);
+      if (activeContent) activeContent.classList.add('active');
+      if (targetTab === 'creations') loadUserCreations();
+      if (targetTab === 'templates') loadBrandTemplates();
+    });
+  });
+
+  // Google Login & Logout
+  if (googleLoginBtn) {
+    googleLoginBtn.addEventListener('click', () => {
+      if (window.agosSupabase) window.agosSupabase.signInWithGoogle();
+    });
+  }
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      if (window.agosSupabase) window.agosSupabase.signOut();
+    });
+  }
+
+  // Refill Credits inside Profile Modal
+  if (profRefillBtn) {
+    profRefillBtn.addEventListener('click', async () => {
+      userCredits += 150;
+      updateCreditsUI();
+      if (profCreditsBig) profCreditsBig.textContent = userCredits;
+      const user = window.agosSupabase && window.agosSupabase.getUser();
+      if (user) {
+        await window.agosSupabase.syncCredits(user.id, userCredits);
+      }
+      profRefillBtn.textContent = '✓ Bonus Riscattato (+150)!';
+      setTimeout(() => { profRefillBtn.textContent = '🎁 Riscatta Bonus (+150)'; }, 2500);
+    });
+  }
+
+  // Save Settings
+  if (saveSettingsBtn) {
+    saveSettingsBtn.addEventListener('click', async () => {
+      const user = window.agosSupabase && window.agosSupabase.getUser();
+      const settings = {
+        default_model: settingDefaultModel ? settingDefaultModel.value : 'auto-router',
+        default_ratio: settingDefaultRatio ? settingDefaultRatio.value : '1:1',
+        custom_brand_prompt: settingBrandPrompt ? settingBrandPrompt.value.trim() : ''
+      };
+      if (modelSelect && settings.default_model) modelSelect.value = settings.default_model;
+      if (ratioSelect && settings.default_ratio) {
+        ratioSelect.value = settings.default_ratio;
+        updateActiveRatioTileUI(settings.default_ratio);
+      }
+      if (user && window.agosSupabase) {
+        saveSettingsBtn.disabled = true;
+        saveSettingsBtn.textContent = 'Salvataggio...';
+        await window.agosSupabase.updateUserSettings(user.id, settings);
+        saveSettingsBtn.disabled = false;
+        saveSettingsBtn.textContent = '💾 Salva Preferenze';
+      }
+      if (settingsFeedback) {
+        settingsFeedback.textContent = '✓ Preferenze salvate!';
+        setTimeout(() => { settingsFeedback.textContent = ''; }, 3000);
+      }
+    });
+  }
+
+  // Load User Creations from Supabase
+  async function loadUserCreations() {
+    if (!window.agosSupabase || !userCreationsGrid) return;
+    const user = window.agosSupabase.getUser();
+    if (!user) {
+      if (emptyCreationsMsg) emptyCreationsMsg.style.display = 'block';
+      return;
+    }
+    const creations = await window.agosSupabase.fetchUserCreations(user.id);
+    if (profCreationsCount) profCreationsCount.textContent = creations.length;
+    if (!creations || creations.length === 0) {
+      if (emptyCreationsMsg) emptyCreationsMsg.style.display = 'block';
+      userCreationsGrid.innerHTML = '';
+      userCreationsGrid.appendChild(emptyCreationsMsg);
+      return;
+    }
+
+    userCreationsGrid.innerHTML = '';
+    creations.forEach(cr => {
+      const card = document.createElement('div');
+      card.className = 'vault-creation-card';
+      card.innerHTML = `
+        <div class="vault-thumb-wrap">
+          <img src="${cr.image_url}" alt="Concept" class="vault-thumb-img" loading="lazy">
+        </div>
+        <div class="vault-card-body">
+          <p class="vault-card-prompt" title="${cr.prompt}">${cr.prompt}</p>
+          <div class="vault-card-footer">
+            <span class="vault-ratio-pill">${cr.ratio || '1:1'}</span>
+            <button type="button" class="vault-delete-btn" title="Elimina concept">🗑</button>
+          </div>
+        </div>
+      `;
+      const delBtn = card.querySelector('.vault-delete-btn');
+      if (delBtn) {
+        delBtn.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          if (confirm("Vuoi rimuovere questa creazione dal tuo profilo?")) {
+            await window.agosSupabase.deleteCreation(cr.id);
+            card.remove();
+            loadUserCreations();
+          }
+        });
+      }
+      card.addEventListener('click', () => {
+        openLightbox(cr.image_url, cr.prompt);
+      });
+      userCreationsGrid.appendChild(card);
+    });
+  }
+
+  // Load Brand Templates from Supabase
+  async function loadBrandTemplates() {
+    if (!window.agosSupabase || !brandTemplatesGrid) return;
+    const templates = await window.agosSupabase.fetchBrandTemplates();
+    if (profTemplatesCount) profTemplatesCount.textContent = templates.length;
+    if (!templates || templates.length === 0) return;
+
+    brandTemplatesGrid.innerHTML = '';
+    templates.forEach(tpl => {
+      const card = document.createElement('div');
+      card.className = 'brand-template-card';
+      const paletteHtml = (tpl.palette || []).map(hex => `<span class="palette-dot" style="background:${hex};" title="${hex}"></span>`).join('');
+      card.innerHTML = `
+        <div class="brand-template-preview">
+          <img src="${tpl.preview_url || '/style_previews/agtechdesigne_official.jpg'}" alt="${tpl.title}" loading="lazy">
+        </div>
+        <div class="brand-template-body">
+          <h5 class="brand-template-title">${tpl.title}</h5>
+          <div class="brand-template-palette">${paletteHtml}</div>
+          <button type="button" class="brand-template-use-btn">✦ Applica Template</button>
+        </div>
+      `;
+      const useBtn = card.querySelector('.brand-template-use-btn');
+      if (useBtn) {
+        useBtn.addEventListener('click', () => {
+          if (promptInput) {
+            promptInput.value = tpl.prompt_template;
+            autoResize();
+            promptInput.focus();
+            closeProfileModal();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      }
+      brandTemplatesGrid.appendChild(card);
+    });
+  }
+
+  // Initialize Supabase Auth & Session State
+  async function initSupabaseProfile() {
+    if (!window.agosSupabase) return;
+    const sb = window.agosSupabase.getClient();
+    if (!sb) return;
+
+    try {
+      const { data: { session } } = await sb.auth.getSession();
+      if (session && session.user) {
+        await applyUserSession(session.user);
+      } else {
+        applyUnauthenticatedState();
+      }
+
+      sb.auth.onAuthStateChange(async (event, session) => {
+        if (session && session.user) {
+          await applyUserSession(session.user);
+        } else {
+          applyUnauthenticatedState();
+        }
+      });
+    } catch (e) {
+      console.warn("[SUPABASE] Init exception:", e);
+      applyUnauthenticatedState();
+    }
+
+    loadBrandTemplates();
+  }
+
+  async function applyUserSession(user) {
+    if (!window.agosSupabase) return;
+    window.agosSupabase.setUser(user);
+    const profile = await window.agosSupabase.fetchProfile(user.id);
+    const settings = await window.agosSupabase.fetchUserSettings(user.id);
+
+    // Header UI
+    if (headerUserAvatar) {
+      const avatarUrl = (profile && profile.avatar_url) || (user.user_metadata && user.user_metadata.avatar_url) || '/apple-touch-icon.png';
+      headerUserAvatar.src = avatarUrl;
+    }
+    if (headerUserName) {
+      const name = (profile && profile.display_name) || (user.user_metadata && user.user_metadata.full_name) || user.email.split('@')[0];
+      headerUserName.textContent = name;
+    }
+    if (headerUserDot) headerUserDot.classList.add('active');
+
+    // Modal UI
+    if (profAvatarImg) {
+      profAvatarImg.src = (profile && profile.avatar_url) || (user.user_metadata && user.user_metadata.avatar_url) || '/apple-touch-icon.png';
+    }
+    if (profDisplayName) {
+      profDisplayName.textContent = (profile && profile.display_name) || (user.user_metadata && user.user_metadata.full_name) || user.email.split('@')[0];
+    }
+    if (profEmail) profEmail.textContent = user.email || '';
+    if (profTierBadge) {
+      const tier = (profile && profile.plan_tier) || 'free';
+      profTierBadge.textContent = tier.toUpperCase().replace('_', ' ');
+      profTierBadge.className = `profile-tier-badge ${tier}`;
+    }
+
+    // Credits sync
+    if (profile && typeof profile.credits === 'number') {
+      userCredits = profile.credits;
+      updateCreditsUI();
+      if (profCreditsBig) profCreditsBig.textContent = userCredits;
+    }
+
+    // Auth Views Toggle
+    if (profUnauthenticatedView) profUnauthenticatedView.style.display = 'none';
+    if (profAuthenticatedView) profAuthenticatedView.style.display = 'block';
+
+    if (profUserIdShort) profUserIdShort.textContent = user.id.slice(0, 8) + '...';
+    if (profPlanName) profPlanName.textContent = (profile && profile.plan_tier ? profile.plan_tier.toUpperCase() : 'FREE TIER');
+    if (profUserRole) profUserRole.textContent = (profile && profile.role ? profile.role.toUpperCase() : 'USER');
+
+    // Settings sync
+    if (settings) {
+      if (settingDefaultModel && settings.default_model) settingDefaultModel.value = settings.default_model;
+      if (settingDefaultRatio && settings.default_ratio) settingDefaultRatio.value = settings.default_ratio;
+      if (settingBrandPrompt && settings.custom_brand_prompt) settingBrandPrompt.value = settings.custom_brand_prompt;
+    }
+
+    // Carica le creazioni personali
+    loadUserCreations();
+  }
+
+  function applyUnauthenticatedState() {
+    if (headerUserName) headerUserName.textContent = 'Accedi';
+    if (headerUserAvatar) headerUserAvatar.src = '/apple-touch-icon.png';
+    if (headerUserDot) headerUserDot.classList.remove('active');
+
+    if (profDisplayName) profDisplayName.textContent = 'agtechdesigne Creator';
+    if (profTierBadge) {
+      profTierBadge.textContent = 'FREE TIER';
+      profTierBadge.className = 'profile-tier-badge free';
+    }
+    if (profEmail) profEmail.textContent = 'Non autenticato — Accedi con Google per salvare concept e crediti';
+    if (profCreditsBig) profCreditsBig.textContent = userCredits;
+
+    if (profUnauthenticatedView) profUnauthenticatedView.style.display = 'block';
+    if (profAuthenticatedView) profAuthenticatedView.style.display = 'none';
+  }
+
   // ---------- Init ----------
   updateCreditsUI();
   loadChats();
@@ -1630,6 +1972,7 @@
   checkStatus();
   loadModels();
   loadStyles();
+  initSupabaseProfile();
   if (!getActiveChat()) {
     newChat();
   }
