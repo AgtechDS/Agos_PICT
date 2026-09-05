@@ -114,7 +114,11 @@
   background: transparent;
 }
 
-html,
+html {
+  font-size: 75%; /* Riduzione globale del 25% di tutti i caratteri tipografici del sito (1rem = 12px) */
+  height: 100%;
+}
+
 body {
   height: 100%;
   font-family: var(--font-body);
