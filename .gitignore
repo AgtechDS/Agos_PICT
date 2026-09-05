@@ -59,3 +59,9 @@ outputs/
 *.sublime-workspace
 .DS_Store
 Thumbs.db
+
+# Experimental Lab Prototypes (External to Production)
+static/*_lab.html
+*_lab.html
+cosmic_field_lab.html
+

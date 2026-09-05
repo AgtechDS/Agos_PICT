@@ -13,7 +13,9 @@ import webbrowser
 
 def main():
     target_url = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8300"
-    status_url = f"{target_url.rstrip('/')}/status"
+    from urllib.parse import urlparse
+    parsed = urlparse(target_url)
+    status_url = f"{parsed.scheme}://{parsed.netloc}/status"
 
     # Attendi fino a 15 secondi che il server risponda
     for _ in range(30):
