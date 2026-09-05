@@ -5315,3 +5315,59 @@ select:focus {
     display: none;
   }
 }
+
+/* ==========================================================================
+   COSMIC INTELLIGENCE FIELD — LIVE WEBGL 3D BACKGROUND INTEGRATION
+   ========================================================================== */
+.cosmic-background-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Studio Translucent Layering (Cosmic Field shines through) */
+.app.leonardo-studio-layout {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.studio-workspace {
+  background: transparent;
+}
+
+.studio-main {
+  background: transparent !important;
+}
+
+.studio-sidebar {
+  background: rgba(9, 10, 18, 0.78) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.studio-header {
+  background: rgba(5, 5, 7, 0.78) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+}
+
+.prompt-bar-section {
+  background: linear-gradient(180deg, rgba(5, 5, 7, 0.78) 75%, transparent) !important;
+}
+
+.studio-canvas-container {
+  background: transparent !important;
+}
+
+.canvas-empty-welcome {
+  background: rgba(9, 10, 18, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(93, 46, 255, 0.22);
+  border-radius: 20px;
+}
