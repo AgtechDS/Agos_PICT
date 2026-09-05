@@ -3,39 +3,56 @@
 
 :root {
   /* agtechdesigne OFFICIAL — Core Cinematic Palette */
-  --bg: #050507;                         /* Midnight Void */
-  --bg-sidebar: #090a12;                  /* Deep Surface */
+  --bg: #050507;
+  /* Midnight Void */
+  --bg-sidebar: #090a12;
+  /* Deep Surface */
   --bg-sidebar-hover: #121522;
   --bg-header: rgba(5, 5, 7, 0.92);
   --bg-bubble-user: #131625;
   --bg-bubble-ai: #0f111c;
   --bg-composer: #0d0f18;
-  --bg-card: #0f111a;                     /* Card Surface */
+  --bg-card: #0f111a;
+  /* Card Surface */
 
   /* Borders & Separation */
-  --border: rgba(191, 199, 213, 0.14);    /* Chrome Silver tint */
-  --border-active: #5D2EFF;              /* Universe Blue Violet */
-  --border-focus: rgba(0, 231, 255, 0.5); /* Cyan Soft Glow */
+  --border: rgba(191, 199, 213, 0.14);
+  /* Chrome Silver tint */
+  --border-active: #5D2EFF;
+  /* Universe Blue Violet */
+  --border-focus: rgba(0, 231, 255, 0.5);
+  /* Cyan Soft Glow */
 
   /* Typography */
   --font-display: 'Outfit', -apple-system, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  --text: #F4EFE6;                        /* Panda White */
-  --text-muted: #BFC7D5;                  /* Chrome Silver */
+  --text: #F4EFE6;
+  /* Panda White */
+  --text-muted: #BFC7D5;
+  /* Chrome Silver */
 
   /* Official agtechdesigne Colors */
-  --accent-hero: #5D2EFF;                 /* Universe Blue Violet (Hero 25%) */
-  --accent-cyan: #00E7FF;                 /* Cyan Soft Glow (Support 10%) */
-  --accent-fuchsia: #FF1E9E;              /* Neon Fuchsia (Brand Energy) */
-  --accent-gold: #D4A017;                 /* Royal Gold (Luxury 5%) */
-  --accent-orange: #FF6B00;               /* Inferno Orange (Accent) */
-  --accent-crimson: #D90452;              /* Crimson Pulse */
-  --accent-smoke: #2A103F;                /* Smoke Purple */
+  --accent-hero: #5D2EFF;
+  /* Universe Blue Violet (Hero 25%) */
+  --accent-cyan: #00E7FF;
+  /* Cyan Soft Glow (Support 10%) */
+  --accent-fuchsia: #FF1E9E;
+  /* Neon Fuchsia (Brand Energy) */
+  --accent-gold: #D4A017;
+  /* Royal Gold (Luxury 5%) */
+  --accent-orange: #FF6B00;
+  /* Inferno Orange (Accent) */
+  --accent-crimson: #D90452;
+  /* Crimson Pulse */
+  --accent-smoke: #2A103F;
+  /* Smoke Purple */
 
   /* Legacy aliases mapped to Official Palette */
-  --accent-terracotta: #5D2EFF;           /* Mapped to Universe Blue Violet */
-  --accent-ochre: #00E7FF;                /* Mapped to Cyan Soft Glow */
+  --accent-terracotta: #5D2EFF;
+  /* Mapped to Universe Blue Violet */
+  --accent-ochre: #00E7FF;
+  /* Mapped to Cyan Soft Glow */
   --accent-ultramarine: #5D2EFF;
   --accent-sage: #00E7FF;
   --accent-linen: #F4EFE6;
@@ -3195,11 +3212,14 @@ select:focus {
 }
 
 @keyframes agosBrandSparklePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     filter: drop-shadow(0 0 6px rgba(0, 231, 255, 0.75));
     color: var(--accent-cyan);
   }
+
   50% {
     transform: scale(1.18);
     filter: drop-shadow(0 0 14px rgba(93, 46, 255, 0.85)) drop-shadow(0 0 8px rgba(255, 30, 158, 0.8));
@@ -4110,16 +4130,20 @@ select:focus {
   0% {
     transform: translateY(0px) scale(1);
   }
+
   100% {
     transform: translateY(-6px) scale(1.03);
   }
 }
 
 @keyframes agosLogoAuraPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(0.94);
     opacity: 0.6;
   }
+
   50% {
     transform: scale(1.15);
     opacity: 1;
@@ -4497,8 +4521,13 @@ select:focus {
 }
 
 @keyframes agosEnergyStream {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
 }
 
 .canvas-spinner {
@@ -4625,7 +4654,7 @@ select:focus {
 
 /* ==========================================================================
    HEADER USER PROFILE BUTTON & MY PROFILE MODAL
-   Official agtechdesigne Studio Design System
+   Official AGOS_PICT STUDIO Design System
    ========================================================================== */
 
 .user-profile-btn {

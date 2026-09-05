@@ -5,7 +5,7 @@ cd /d "%~dp0"
 
 cls
 echo ================================================================
-echo   ✦ agtechdesigne STUDIO — Creative Visual Playground ^& Style Engine
+echo   ✦ AGOS_PICT STUDIO — Creative Visual Playground ^& Style Engine
 echo   Ecosistema AgTechDesigne · Versione 2.5.0 (MIT-Grade)
 echo ================================================================
 echo.

@@ -1,5 +1,5 @@
 /**
- * agtechdesigne STUDIO (AGOS Pict) — Supabase Client & State Synchronization
+ * AGOS_PICT STUDIO (AGOS Pict) — Supabase Client & State Synchronization
  * Gestione Auth (Google OAuth), Profili, Impostazioni Utente, Creazioni e Template di Branding.
  */
 (() => {

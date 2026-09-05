@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Vercel Serverless Function entrypoint per agtechdesigne Studio (AGOS Pict).
+Vercel Serverless Function entrypoint per AGOS_PICT STUDIO (AGOS Pict).
 Espone gli endpoint API /status, /models, /api/generate tramite BaseHTTPRequestHandler.
 """
 

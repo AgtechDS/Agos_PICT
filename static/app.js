@@ -1001,7 +1001,7 @@
       img.className = 'style-card-thumb';
       img.alt = st.name;
       img.src = st.preview_image || '/style_previews/creativo.jpg';
-      img.onerror = function() {
+      img.onerror = function () {
         this.src = '/style_previews/creativo.jpg';
       };
       thumbWrap.appendChild(img);
@@ -1650,7 +1650,7 @@
   });
 
   // =========================================================================
-  // SUPABASE & MY PROFILE INTEGRATION (Official agtechdesigne Studio)
+  // SUPABASE & MY PROFILE INTEGRATION (Official AGOS_PICT STUDIO)
   // =========================================================================
   const userProfileBtn = $('userProfileBtn');
   const profileModal = $('profileModal');

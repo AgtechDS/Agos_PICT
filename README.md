@@ -1,6 +1,6 @@
 <div align="center">
 
-# agtechdesigne STUDIO
+# AGOS_PICT STUDIO
 ### AI Creative Visual Playground & Style Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-5D2EFF.svg?style=for-the-badge)](LICENSE)
@@ -10,7 +10,7 @@
 [![Design System](https://img.shields.io/badge/Style-Tokyo%20Cyber%20%7C%20Gemini%20Aesthetic-FF1E9E.svg?style=for-the-badge)](docs/AGOS_VISUAL_DESIGN_SYSTEM.md)
 
 <p align="center">
-  <strong>agtechdesigne Studio (AGOS Pict)</strong> is a state-of-the-art AI-powered visual playground, concept art generator, and poster ideation studio. Built with a resilient multi-provider neural router, precision aspect-ratio cropping, and an electric cyber-cinematic user interface.
+  <strong>AGOS_PICT STUDIO (AGOS Pict)</strong> is a state-of-the-art AI-powered visual playground, concept art generator, and poster ideation studio. Built with a resilient multi-provider neural router, precision aspect-ratio cropping, and an electric cyber-cinematic user interface.
 </p>
 
 [Caratteristiche](#-caratteristiche-principali) •
