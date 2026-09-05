@@ -1,0 +1,251 @@
+/* ==========================================================================
+   agtechdesigne OFFICIAL — CINEMATIC DESIGN TOKENS & EFFECT ENGINE
+   The official aesthetic design system for agtechdesigne projects.
+   Mood: Tokyo Nightclub + EDM Festival + Luxury Streetwear + Cinematic Neon
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. agtechdesigne CORE COLORS
+     ------------------------------------------------------------------------ */
+  /* Canvas & Depths */
+  --ag-midnight-void: #050507;        /* Background assoluto */
+  --ag-bg-surface: #0a0b12;           /* Surface base */
+  --ag-bg-card: #0f111a;              /* Card vessel */
+  --ag-bg-card-hover: #161926;
+  --ag-smoke-purple: #2A103F;         /* Background FX & Atmospheric Sheen */
+
+  /* Hero & Support Neons */
+  --ag-neon-fuchsia: #FF1E9E;         /* Main brand energy / Hero color */
+  --ag-electric-cyan: #00E7FF;        /* Glow e highlights / Support color */
+  --ag-deep-violet: #5D2EFF;          /* Atmosfera cinematic */
+  --ag-inferno-orange: #FF6B00;       /* Energy accents */
+  --ag-royal-gold: #D4A017;           /* Luxury touch / Accent luxury */
+  --ag-crimson-pulse: #D90452;        /* Ombre aggressive */
+
+  /* Typography & Metallics */
+  --ag-panda-white: #F4EFE6;          /* Testi premium, bianco caldo */
+  --ag-chrome-silver: #BFC7D5;        /* Metallic UI, metadati */
+  --ag-text-muted: #6b778c;           /* Subdued secondary */
+
+  /* Aliases per compatibilità AVDS */
+  --agos-bg-obsidian: var(--ag-midnight-void);
+  --agos-bg-surface: var(--ag-bg-surface);
+  --agos-bg-card: var(--ag-bg-card);
+  --agos-bg-card-hover: var(--ag-bg-card-hover);
+  --agos-bg-elevated: #151824;
+
+  --agos-fuchsia: var(--ag-neon-fuchsia);
+  --agos-cyan: var(--ag-electric-cyan);
+  --agos-violet: var(--ag-deep-violet);
+  --agos-orange: var(--ag-inferno-orange);
+  --agos-gold: var(--ag-royal-gold);
+  --agos-crimson: var(--ag-crimson-pulse);
+
+  --agos-text-primary: var(--ag-panda-white);
+  --agos-text-secondary: var(--ag-chrome-silver);
+  --agos-text-muted: var(--ag-text-muted);
+
+  /* ------------------------------------------------------------------------
+     2. CINEMATIC GRADIENTS
+     ------------------------------------------------------------------------ */
+  /* 1. Official agtechdesigne Gradient (Signature) */
+  --ag-grad-signature: linear-gradient(
+    135deg,
+    #FF1E9E 0%,
+    #5D2EFF 50%,
+    #00E7FF 100%
+  );
+
+  /* 2. Festival Explosion */
+  --ag-grad-festival: linear-gradient(
+    135deg,
+    #FF6B00 0%,
+    #FF1E9E 45%,
+    #5D2EFF 100%
+  );
+
+  /* 3. Luxury Panda */
+  --ag-grad-luxury: linear-gradient(
+    135deg,
+    #050507 0%,
+    #2A103F 60%,
+    #D4A017 100%
+  );
+
+  /* Ambient Card Surface Sheen */
+  --ag-grad-card: linear-gradient(
+    180deg,
+    rgba(42, 16, 63, 0.22) 0%,
+    rgba(15, 17, 26, 0.95) 100%
+  );
+
+  /* Aliases */
+  --agos-grad-signature: var(--ag-grad-signature);
+  --agos-grad-energy: var(--ag-grad-signature);
+  --agos-grad-card: var(--ag-grad-card);
+
+  /* ------------------------------------------------------------------------
+     3. GLOWS & ATMOSPHERICS
+     ------------------------------------------------------------------------ */
+  --ag-glow-pink: rgba(255, 30, 158, 0.65);
+  --ag-glow-cyan: rgba(0, 231, 255, 0.60);
+  --ag-glow-purple: rgba(93, 46, 255, 0.55);
+  --ag-glow-gold: rgba(212, 160, 23, 0.45);
+
+  --agos-border-subtle: rgba(191, 199, 213, 0.08);
+  --agos-border-card: rgba(191, 199, 213, 0.14);
+  --agos-border-interactive: rgba(0, 231, 255, 0.45);
+  --agos-border-active: var(--ag-neon-fuchsia);
+
+  /* ------------------------------------------------------------------------
+     4. GEOMETRY & CURVATURE TOKENS
+     ------------------------------------------------------------------------ */
+  --agos-radius-pill: 999px;
+  --agos-radius-sm: 8px;
+  --agos-radius-md: 12px;
+  --agos-radius-card: 14px;
+  --agos-radius-vessel: 18px;
+
+  /* ------------------------------------------------------------------------
+     5. INTENTIONAL MOTION & EASING
+     ------------------------------------------------------------------------ */
+  --agos-ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+  --agos-ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --agos-duration-fast: 0.18s;
+  --agos-duration-normal: 0.28s;
+  --agos-duration-thinking: 2.4s;
+
+  --agos-blur-glass: blur(14px);
+  --agos-shadow-card: 0 10px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   REUSABLE UTILITY CLASSES & COMPONENTS
+   ========================================================================== */
+
+/* 1. Dynamic Vessel (Card Container) */
+.agos-vessel {
+  background: var(--ag-bg-card);
+  border: 1px solid var(--agos-border-card);
+  border-radius: var(--agos-radius-card);
+  box-shadow: var(--agos-shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--agos-duration-normal) var(--agos-ease-fluid),
+              box-shadow var(--agos-duration-normal) var(--agos-ease-fluid);
+}
+
+.agos-vessel:hover {
+  border-color: var(--agos-border-interactive);
+}
+
+/* 2. Negative-Space Pill (Circular Harmony) */
+.agos-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--agos-radius-pill);
+  padding: 4px 12px;
+  font-family: var(--font-display, inherit);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all var(--agos-duration-fast) var(--agos-ease-fluid);
+}
+
+.agos-pill-fuchsia {
+  background: rgba(255, 30, 158, 0.12);
+  color: var(--ag-neon-fuchsia);
+  border: 1px solid rgba(255, 30, 158, 0.35);
+}
+
+.agos-pill-fuchsia:hover {
+  background: rgba(255, 30, 158, 0.22);
+  box-shadow: 0 0 14px var(--ag-glow-pink);
+}
+
+.agos-pill-cyan {
+  background: rgba(0, 231, 255, 0.12);
+  color: var(--ag-electric-cyan);
+  border: 1px solid rgba(0, 231, 255, 0.35);
+}
+
+.agos-pill-cyan:hover {
+  background: rgba(0, 231, 255, 0.22);
+  box-shadow: 0 0 14px var(--ag-glow-cyan);
+}
+
+.agos-pill-gold {
+  background: rgba(212, 160, 23, 0.12);
+  color: var(--ag-royal-gold);
+  border: 1px solid rgba(212, 160, 23, 0.35);
+}
+
+/* 3. Primary Energy CTA Button */
+.agos-btn-energy {
+  background: var(--ag-grad-signature);
+  color: #fff;
+  border: none;
+  border-radius: var(--agos-radius-sm);
+  font-family: var(--font-display, inherit);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  padding: 8px 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 16px var(--ag-glow-pink);
+  transition: transform var(--agos-duration-fast) var(--agos-ease-fluid),
+              box-shadow var(--agos-duration-fast) var(--agos-ease-fluid);
+}
+
+.agos-btn-energy:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px var(--ag-glow-pink), 0 0 12px var(--ag-glow-cyan);
+}
+
+.agos-btn-energy:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* 4. Living AI "Thinking State" Animation */
+@keyframes agosThinkingSpectralGlow {
+  0% {
+    border-color: rgba(255, 30, 158, 0.55);
+    box-shadow: 0 0 20px rgba(255, 30, 158, 0.35), inset 0 0 14px rgba(255, 30, 158, 0.15);
+  }
+  33% {
+    border-color: rgba(93, 46, 255, 0.7);
+    box-shadow: 0 0 28px rgba(93, 46, 255, 0.4), inset 0 0 18px rgba(93, 46, 255, 0.18);
+  }
+  66% {
+    border-color: rgba(0, 231, 255, 0.7);
+    box-shadow: 0 0 32px rgba(0, 231, 255, 0.4), inset 0 0 20px rgba(0, 231, 255, 0.18);
+  }
+  100% {
+    border-color: rgba(255, 30, 158, 0.55);
+    box-shadow: 0 0 20px rgba(255, 30, 158, 0.35), inset 0 0 14px rgba(255, 30, 158, 0.15);
+  }
+}
+
+.agos-thinking-pulse {
+  animation: agosThinkingSpectralGlow var(--agos-duration-thinking) infinite var(--agos-ease-soft);
+}
+
+/* 5. Directional Energy Stream Bar (Subtle Progress Flow) */
+@keyframes agosEnergyFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.agos-energy-bar {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #FF1E9E, #5D2EFF, #00E7FF, #FF6B00);
+  background-size: 300% 300%;
+  animation: agosEnergyFlow 3s ease infinite;
+}

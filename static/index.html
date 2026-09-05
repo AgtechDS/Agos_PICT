@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>agtechdesigne Studio — AI Creative Visual Playground</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#050507">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="agos-design-tokens.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app leonardo-studio-layout" id="appRoot">
+
+    <!-- DRAG & DROP OVERLAY -->
+    <div class="drag-drop-overlay" id="dragOverlay">
+      <div class="drag-modal">
+        <div class="drag-icon-pulse">🎨</div>
+        <h3>Rilascia qui l'immagine di riferimento</h3>
+        <p>Verrà inclusa nella generazione visiva (Image-to-Image / Style Guidance)</p>
+        <span class="drag-badge">PNG, JPG, WEBP fino a 20MB</span>
+      </div>
+    </div>
+
+    <!-- TOP APP HEADER (LEONARDO.AI INSPIRED) -->
+    <header class="studio-header" id="studioHeader">
+      <div class="header-left">
+        <button type="button" class="sidebar-toggle-btn" id="menuBtn" title="Apri/Chiudi Pannello Parametri">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="logo-box">
+          <img src="/apple-touch-icon.png" alt="agtechdesigne Logo" class="brand-logo-emblem">
+          <h1 class="brand-title">agtechdesigne <span class="brand-studio">STUDIO</span></h1>
+        </div>
+        <div class="header-nav-tabs">
+          <span class="nav-tab active">AI Creation</span>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <span class="session-pill-tag" id="chatTitle">Nuova Sessione</span>
+      </div>
+
+      <div class="header-right">
+        <!-- CREDITI UTENTE (PILL STYLE LEONARDO CON UPGRADE/RICARICA) -->
+        <button type="button" class="credits-pill-upgrade" id="creditsBadge" title="Gestisci e ricarica crediti">
+          <span class="credit-token-icon">🪙</span>
+          <span class="credit-val-num" id="creditsAmount">150</span>
+          <span class="credit-val-label">Crediti</span>
+          <span class="credit-upgrade-badge">+ Ricarica</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- STUDIO WORKSPACE: 3 COLONNE (SX: PARAMETRI, CENTRO: PROMPT IN ALTO + CANVA IN BASSO, DX: CASSETTO STILI) -->
+    <div class="studio-workspace">
+
+      <!-- LEFT SIDEBAR: STUDIO CONTROLS (MODELLO, DIMENSIONI VISUALI CON PIXEL, QUALITA) -->
+      <aside class="studio-sidebar" id="sidebar">
+        <div class="studio-sidebar-inner">
+          <!-- Header con pulsante close visibile sia su Desktop che su Mobile -->
+          <div class="sidebar-header-row">
+            <div class="sidebar-title-wrap">
+              <div class="sidebar-brand-group">
+                <img src="/favicon-32x32.png" alt="agtechdesigne" class="sidebar-logo-icon">
+                <div>
+                  <span class="sidebar-title-badge">STUDIO CONFIG</span>
+                  <h3 class="sidebar-title-text">Parametri Studio</h3>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="sidebar-close-btn" id="closeLeftSidebarBtn"
+              title="Chiudi menu sinistro">✕</button>
+          </div>
+
+          <!-- SELEZIONE MODELLO (DROPDOWN MODERNO) -->
+          <div class="sidebar-control-group">
+            <label class="control-label" for="modelSelect">
+              <span class="label-icon">✨</span> Modello AI
+            </label>
+            <div class="model-select-wrap">
+              <select id="modelSelect" class="studio-select"></select>
+            </div>
+            <div class="model-cost-preview" id="modelCostPreview">
+              <span class="cost-badge free" id="modelCostPill"><span id="modelCostText">Free</span></span>
+            </div>
+          </div>
+
+          <!-- STILE ATTIVO PREVIEW NELLA SIDEBAR -->
+          <div class="sidebar-control-group" id="sidebarStyleGroup">
+            <div class="control-label-row">
+              <label class="control-label"><span class="label-icon">🎨</span> Stile Visivo</label>
+              <button type="button" class="label-action-btn" id="sidebarOpenStylesBtn">Catalogo (32) ▸</button>
+            </div>
+            <div class="active-style-card" id="sidebarActiveStyleCard">
+              <span class="style-name-badge" id="activeStyleName">Nessuno stile attivo</span>
+              <div class="style-rgb-mini" id="activeStyleRgbDots"></div>
+              <button type="button" class="style-clear-x" id="clearActiveStyleBtn" title="Rimuovi stile">✕</button>
+            </div>
+          </div>
+
+          <!-- IMAGE DIMENSIONS: TILES VISUALI (COME LEONARDO) CON PIXEL SOTTO -->
+          <div class="sidebar-control-group">
+            <div class="control-label-row">
+              <label class="control-label"><span class="label-icon">📐</span> Formato & Risoluzione</label>
+              <span class="dimensions-pixel-readout" id="pixelDimensionsBadge">1024 × 1024 px</span>
+            </div>
+            <div class="ratio-tiles-grid" id="ratioTilesGrid">
+              <button type="button" class="ratio-tile active" data-ratio="1:1"
+                title="Quadrato Post & Cover (1024x1024)">
+                <div class="tile-aspect-icon aspect-1-1"></div>
+                <span class="tile-ratio-label">1:1</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="9:16" title="Verticale Stories & TikTok (720x1280)">
+                <div class="tile-aspect-icon aspect-9-16"></div>
+                <span class="tile-ratio-label">9:16</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="4:5" title="Verticale Instagram Feed (864x1080)">
+                <div class="tile-aspect-icon aspect-4-5"></div>
+                <span class="tile-ratio-label">4:5</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="16:9" title="Orizzontale Video & Cinema (1280x720)">
+                <div class="tile-aspect-icon aspect-16-9"></div>
+                <span class="tile-ratio-label">16:9</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="2:3" title="Manifesto Editoriale (720x1080)">
+                <div class="tile-aspect-icon aspect-2-3"></div>
+                <span class="tile-ratio-label">2:3</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="3:4" title="Locandina Tradizionale (768x1024)">
+                <div class="tile-aspect-icon aspect-3-4"></div>
+                <span class="tile-ratio-label">3:4</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="3:2" title="Landscape Banner (1080x720)">
+                <div class="tile-aspect-icon aspect-3-2"></div>
+                <span class="tile-ratio-label">3:2</span>
+              </button>
+              <button type="button" class="ratio-tile" data-ratio="21:9" title="Ultra-Wide Panoramico (1344x576)">
+                <div class="tile-aspect-icon aspect-21-9"></div>
+                <span class="tile-ratio-label">21:9</span>
+              </button>
+            </div>
+            <!-- Hidden select for form compatibility -->
+            <select id="ratioSelect" style="display:none">
+              <option value="1:1" selected>1:1 Square</option>
+              <option value="9:16">9:16 Stories</option>
+              <option value="4:5">4:5 Feed</option>
+              <option value="16:9">16:9 Wide</option>
+              <option value="2:3">2:3 Portrait</option>
+              <option value="3:4">3:4 Portrait</option>
+              <option value="3:2">3:2 Landscape</option>
+              <option value="21:9">21:9 Cinema</option>
+            </select>
+          </div>
+
+          <!-- QUALITA / GENERATION MODE -->
+          <div class="sidebar-control-group">
+            <label class="control-label" for="qualitySelect"><span class="label-icon">⚡</span> Qualità Rendering</label>
+            <div class="segmented-quality" id="qualitySegmented">
+              <button type="button" class="seg-btn active" data-quality="auto">Auto</button>
+              <button type="button" class="seg-btn" data-quality="high">Ultra-HD</button>
+              <button type="button" class="seg-btn" data-quality="low">Bozza</button>
+            </div>
+            <select id="qualitySelect" style="display:none">
+              <option value="auto" selected>Auto</option>
+              <option value="high">Alta</option>
+              <option value="low">Bassa</option>
+            </select>
+          </div>
+
+          <!-- SESSIONI RECENTI / NUOVA SESSIONE -->
+          <div class="sidebar-control-group session-group">
+            <div class="control-label-row">
+              <label class="control-label"><span class="label-icon">📁</span> Sessioni</label>
+              <button type="button" class="new-session-mini-btn" id="newChatBtn" title="Nuova Sessione">＋ Nuova</button>
+            </div>
+            <div class="sessions-mini-list" id="chatList"></div>
+          </div>
+
+          <!-- RESET TO DEFAULTS (COME IN BASSO NELLA FOTO LEONARDO) -->
+          <div class="sidebar-bottom-actions">
+            <button type="button" class="reset-defaults-btn" id="resetDefaultsBtn"
+              title="Ripristina parametri predefiniti">
+              <span class="reset-icon">↺</span> Reset to Defaults
+            </button>
+            <div class="sidebar-status-box">
+              <span class="status-dot" id="statusDot"></span>
+              <span id="statusText">Verifica Router...</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- SIDEBAR OVERLAY FOR MOBILE -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- MAIN STUDIO AREA (PROMPT IN ALTO, BOX CANVA IN BASSO) -->
+      <main class="studio-main" id="mainArea">
+
+        <!-- TOP: PROMPT BAR AD AUTO-ESPANSIONE (IN ALTO COME RICHIESTO) -->
+        <section class="prompt-bar-section" id="promptSection">
+          <div class="prompt-bar-container" id="composerBox">
+
+            <!-- ATTACHED IMAGE CHIP (SE PRESENTE) -->
+            <div class="prompt-attachment-chip" id="imagePreviewCard" style="display:none;">
+              <img id="previewThumb" alt="Riferimento">
+              <span class="chip-label">🖼️ Riferimento: <strong id="previewFilename">file.png</strong></span>
+              <button type="button" class="chip-remove-btn" id="removeImageBtn" title="Rimuovi">✕</button>
+            </div>
+
+            <!-- ACTIVE STYLE TAG (SE ATTIVO) -->
+            <div class="prompt-style-chip" id="activeStylePill" style="display:none;">
+              <span class="chip-icon">🎨</span>
+              <span class="chip-label">Stile: <strong id="activeStyleTagText">Nessuno</strong></span>
+              <button type="button" class="chip-remove-btn" id="clearActiveStylePillBtn"
+                title="Rimuovi stile">✕</button>
+            </div>
+
+            <div class="prompt-input-row">
+              <!-- TASTO UPLOAD IMMAGINE CON ICONA FOTO/GRAFICA -->
+              <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp" style="display:none">
+              <button type="button" class="prompt-tool-btn attach-btn" id="attachBtn"
+                title="Carica immagine di riferimento (o trascina)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+              </button>
+
+              <!-- TEXTAREA AUTO-DIMENSIONABILE -->
+              <textarea id="promptInput" rows="1"
+                placeholder="Type a prompt... (es. Poster editoriale minimalista, contrasti ardesia e terracotta, tipografia avant-garde)"
+                aria-label="Prompt immagine"></textarea>
+
+              <!-- CLEAR PROMPT -->
+              <button type="button" class="prompt-clear-btn" id="clearBtn" title="Cancella prompt">✕</button>
+
+              <!-- GENERATE BUTTON CON BADGE COSTO CREDITI -->
+              <button type="button" class="prompt-generate-btn" id="sendBtn" disabled title="Genera concept visivo">
+                <span class="sparkle-icon">✦</span>
+                <span class="gen-text">Genera</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- IN BASSO: BOX CANVA PER FOTO GENERATA (AREA ESPOSITIVA PRINCIPALE) -->
+        <section class="studio-canvas-container" id="canvasArea">
+          <div class="canvas-header-row">
+            <h2 class="canvas-date-title" id="canvasDateTitle">Today — Visual Showcase</h2>
+            <span class="canvas-session-tag" id="canvasSubtitle">Spazio espositivo concept e poster generati</span>
+          </div>
+
+          <!-- WELCOME / INSPIRATION (SE NESSUNA FOTO ANCORA GENERATA) -->
+          <div class="canvas-empty-welcome" id="welcomeMsg">
+            <div class="welcome-box-inner">
+              <div class="welcome-logo-wrap">
+                <img src="/android-chrome-192x192.png" alt="agtechdesigne Studio" class="welcome-logo-emblem">
+              </div>
+              <h3>agtechdesigne <em>STUDIO</em></h3>
+              <p>Creative Visual Playground & Style Engine. Digita un prompt in alto o seleziona uno stile a sinistra per iniziare.</p>
+              <div class="welcome-inspirations">
+                <span class="insp-title">ISPIRAZIONI VELOCI:</span>
+                <div class="insp-chips">
+                  <button type="button" class="chip">🎭 Manifesto sperimentale mixed-media con collage tipografico e texture cyber plasma</button>
+                  <button type="button" class="chip">🌀 Poster d'avanguardia con composizione asimmetrica, contrasti Universe Violet, Cyan Glow e Oro Reale</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FEED / CARDS DELLE IMMAGINI GENERATE NEL BOX CANVA -->
+          <div class="canvas-cards-stream" id="messages">
+            <!-- Qui verranno inseriti i Box Canvas generati via JS -->
+          </div>
+        </section>
+
+      </main>
+
+      <!-- RIGHT SIDEBAR (MENU A SCOMPARSA A DESTRA PER TUTTI I 31 STILI CON ANTEPRIME REALI) -->
+      <aside class="right-sidebar" id="rightSidebar">
+        <div class="right-sidebar-inner">
+          <div class="right-sidebar-header">
+            <div class="right-title-box">
+              <div class="sidebar-brand-group">
+                <img src="/favicon-32x32.png" alt="agtechdesigne" class="sidebar-logo-icon">
+                <div>
+                  <span class="right-badge">STYLE REPOSITORY</span>
+                  <h3>Stili Visivi Curati (32)</h3>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="drawer-close-btn" id="closeRightSidebarBtn"
+              title="Chiudi pannello stili">✕</button>
+          </div>
+
+          <!-- ACTIVE STYLE RGB BANNER -->
+          <div class="active-style-banner" id="activeStyleBanner" style="display:none;">
+            <div class="banner-color-strip" id="bannerColorStrip"></div>
+            <div class="banner-content">
+              <div class="banner-title">Stile Attivo: <strong id="bannerStyleName">Nome</strong></div>
+              <div class="banner-sub" id="bannerRgbMix">Palette Cromatiche RGB Mix</div>
+            </div>
+            <button type="button" class="banner-clear-btn" id="bannerClearBtn" title="Rimuovi stile attivo">✕</button>
+          </div>
+
+          <!-- SEARCH BAR -->
+          <div class="drawer-search-bar">
+            <input type="text" id="styleSearchInput"
+              placeholder="Cerca stile, mood o tecnica (es. cinema, minimal, 3d)...">
+          </div>
+
+          <!-- CATEGORIE SENZA SCROLL ORIZZONTALE -->
+          <div class="drawer-categories no-horiz-scroll" id="styleCategories">
+            <button class="cat-pill active" data-cat="all">Tutti (32)</button>
+            <button class="cat-pill" data-cat="poster_grafico">Poster & Grafica</button>
+            <button class="cat-pill" data-cat="copertina_social">Social & Digital</button>
+            <button class="cat-pill" data-cat="locandina_evento">Eventi & Locandine</button>
+            <button class="cat-pill" data-cat="volantino_promo">Promo & Business</button>
+            <button class="cat-pill" data-cat="menu_ristorazione">Food & Ristorazione</button>
+            <button class="cat-pill" data-cat="biglietto_invito">Inviti & Luxury</button>
+          </div>
+
+          <!-- GRIGLIA STILI CON ANTEPRIME REALI -->
+          <div class="styles-list-scroll" id="stylesGrid"></div>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDEBAR OVERLAY -->
+      <div class="right-sidebar-overlay" id="rightSidebarOverlay"></div>
+
+    </div><!-- /.studio-workspace -->
+
+  </div><!-- /.app -->
+
+  <!-- POSTERLAB PRO HANDOFF MODAL (FIXED OVERLAY) -->
+  <div class="modal-backdrop" id="handoffModal" style="display:none;">
+    <div class="handoff-dialog">
+      <div class="handoff-header">
+        <div class="modal-header-brand-wrap">
+          <img src="/favicon-32x32.png" alt="agtechdesigne" class="modal-logo-icon">
+          <div>
+            <span class="handoff-badge">AGOS ECOSYSTEM CONNECT</span>
+            <h3>Scalare su PosterLab Pro</h3>
+          </div>
+        </div>
+        <button type="button" class="drawer-close-btn" id="closeHandoffBtn">✕</button>
+      </div>
+      <div class="handoff-body">
+        <p><strong>agtechdesigne Studio</strong> è il tuo playground creativo per ideazione visiva. Per trasformare questo concept in
+          un poster commerciale pronto per la stampa:</p>
+        <ul class="handoff-features">
+          <li>✨ <strong>Modelli Ultra-HD:</strong> Google Gemini 3.1 Flash per fotorealismo e character consistency</li>
+          <li>📐 <strong>Canvas Vettoriale Fabric.js:</strong> Livelli tipografici editabili, testi curvi e griglie
+            commerciali</li>
+          <li>🪄 <strong>Magic OCR Eraser:</strong> Rimozione testi pre-esistenti e alpha cut-out automatico</li>
+          <li>🖨️ <strong>Export 4K/Stampa:</strong> File ad altissima risoluzione per eventi e campagne</li>
+        </ul>
+        <div class="handoff-actions">
+          <button type="button" class="btn-primary-glow" id="copyConceptPromptBtn">📋 Copia Prompt & Metadati</button>
+          <button type="button" class="btn-secondary" id="closeHandoffOkBtn">Ho capito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDITS INFO & REFILL MODAL (FIXED OVERLAY) -->
+  <div class="modal-backdrop" id="creditsModal" style="display:none;">
+    <div class="handoff-dialog">
+      <div class="handoff-header">
+        <div class="modal-header-brand-wrap">
+          <img src="/favicon-32x32.png" alt="agtechdesigne" class="modal-logo-icon">
+          <div>
+            <span class="handoff-badge">agtechdesigne CREDITI</span>
+            <h3>I tuoi Crediti di Generazione</h3>
+          </div>
+        </div>
+        <button type="button" class="drawer-close-btn" id="closeCreditsBtn">✕</button>
+      </div>
+      <div class="handoff-body">
+        <div class="credits-summary-card">
+          <div class="credits-big-num" id="modalCreditsNum">150</div>
+          <div class="credits-big-label">Crediti Disponibili</div>
+        </div>
+        <ul class="handoff-features">
+          <li>🆓 <strong>Modelli Free (0 crediti):</strong> Smart Router, Agnes Background Studio, Qwen Image Max</li>
+          <li>⚡ <strong>Google Gemini 3.1 Flash Pro:</strong> 50 crediti per generazione Ultra-HD con typography</li>
+          <li>🎨 <strong>Agnes Background Studio:</strong> 0 crediti (Sfondi grafici & texture astratte canvas per
+            PosterLab)</li>
+        </ul>
+        <div class="handoff-actions">
+          <button type="button" class="btn-primary-glow" id="refillCreditsBtn">🎁 Ricarica Bonus (+150)</button>
+          <button type="button" class="btn-secondary" id="closeCreditsOkBtn">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,903 @@
+[
+  {
+    "id": "agtechdesigne_official",
+    "name": "agtechdesigne Official (Cinematic Neon)",
+    "folder": "Signature",
+    "category": "ai_signature",
+    "category_label": "agtechdesigne Official",
+    "icon": "✦",
+    "is_signature": true,
+    "visual_direction": "Tokyo Nightclub + EDM Festival + Luxury Streetwear + Bachata Energy. Portali a triangoli neon, cyber smoke, aberrazione cromatica, midnight void (#050507), universe blue violet (#5D2EFF), cyan glow (#00E7FF) e accenti royal gold (#D4A017).",
+    "prompt_full": "agtechdesigne official cinematic style, Tokyo nightclub meets EDM festival luxury streetwear aesthetic, glowing neon triangle portal composition, volumetric cyber smoke and atmospheric fog, wet asphalt reflecting specular neon lights, chromatic aberration on edges, rear view silhouette of streetwear figure with techwear hoodie, deep midnight void #050507, universe blue violet #5D2EFF, electric cyan soft glow #00E7FF, subtle royal gold luxury accents #D4A017, crimson pulse rim light #D90452, lens flare streaks, high fashion rave couture, anime club aesthetic, 8k resolution, Unreal Engine 5 render, hyper-detailed, Afterlife festival vibe.",
+    "prompt_minimal": "Cinematic neon cyberpunk poster art, glowing neon triangle portal, electric cyan #00E7FF and universe blue violet #5D2EFF, volumetric cyber smoke, midnight void black background #050507, subtle royal gold accents #D4A017, lens flare streaks, chromatic aberration, 8k resolution, photorealistic, no text.",
+    "mood_keywords": [
+      "cinematic neon",
+      "urban luxury",
+      "cyber festival",
+      "electric bachata",
+      "anime club",
+      "edm afterlife",
+      "rave couture",
+      "neon triangles",
+      "agtechdesigne official"
+    ],
+    "palette": {
+      "primary": "#5D2EFF",
+      "secondary": "#00E7FF",
+      "accent": "#D4A017",
+      "background": "#050507",
+      "text": "#F4EFE6",
+      "glow": "#FF1E9E",
+      "gradient": "linear-gradient(135deg, #FF1E9E 0%, #5D2EFF 50%, #00E7FF 100%)"
+    },
+    "preview_image": "/style_previews/agtechdesigne_official.jpg"
+  },
+  {
+    "id": "artigianale",
+    "name": "Artigianale & Handmade Kraft",
+    "folder": "Artigianale",
+    "category": "menu_ristorazione",
+    "category_label": "Menu Ristorazione & Drink",
+    "icon": "🧵",
+    "visual_direction": "Texture di carta ruvida fatta a mano, imperfezioni d'autore e timbri a pressione.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Artigianale. VISUAL DIRECTION: Handcrafted graphic design, tactile textures, imperfect details, handmade visual character, artisanal aesthetic, natural materials, authentic craftsmanship feel, warm and personal visual language.",
+    "prompt_minimal": "Handmade artisanal paper texture background, raw deckle edges, subtle hand-pressed ink stamp accents, warm tactile craftsmanship, earthy organic warmth, 8k, no text.",
+    "mood_keywords": [
+      "artigianale",
+      "carta kraft",
+      "fatto a mano",
+      "timbri inchiostro",
+      "calore umano"
+    ],
+    "palette": {
+      "primary": "#8B5E3C",
+      "secondary": "#EAD7C0",
+      "accent": "#2B1E16",
+      "background": "#1A120D",
+      "text": "#EAD7C0",
+      "glow": "#8B5E3C",
+      "gradient": "linear-gradient(135deg, #8B5E3C 0%, #EAD7C0 100%)"
+    },
+    "preview_image": "/style_previews/artigianale.jpg"
+  },
+  {
+    "id": "audace",
+    "name": "Audace Maxi Typography",
+    "folder": "Audace",
+    "category": "volantino_promo",
+    "category_label": "Volantino & Flyer Promo",
+    "icon": "💥",
+    "visual_direction": "Tipografia mastodontica a tutto schermo, contrasti cromatici violenti rosso/nero e impatto sonoro visivo.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Audace. VISUAL DIRECTION: Bold graphic design, oversized typography, strong contrast, impactful composition, saturated colors, aggressive visual hierarchy, high-energy layout, confident and commanding presence.",
+    "prompt_minimal": "Aggressive high-impact bold poster background, ultra saturated red and solid black geometric blocks, intense contrasting shapes, powerful commanding graphic presence, 8k, no text.",
+    "mood_keywords": [
+      "audace",
+      "massimalismo",
+      "rosso fuoco",
+      "contrasto totale",
+      "headline shock"
+    ],
+    "palette": {
+      "primary": "#FF0033",
+      "secondary": "#FFFFFF",
+      "accent": "#050507",
+      "background": "#000000",
+      "text": "#FFFFFF",
+      "glow": "#FF0033",
+      "gradient": "linear-gradient(135deg, #FF0033 0%, #FF6B00 100%)"
+    },
+    "preview_image": "/style_previews/audace.jpg"
+  },
+  {
+    "id": "cinematografico",
+    "name": "Cinematografico Blockbuster",
+    "folder": "Cinematografico",
+    "category": "locandina_evento",
+    "category_label": "Locandina Evento & Club",
+    "icon": "🎬",
+    "visual_direction": "Grading cinematografico teal & orange, lens flare anamorfici e fumo teatrale volumetrico.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Cinematografico. VISUAL DIRECTION: Hollywood blockbuster movie poster background, dramatic cinematic lighting, deep teal and orange color grading, dramatic haze and anamorphic lens flares, epic scale storytelling, high-budget film aesthetic.",
+    "prompt_minimal": "Epic Hollywood blockbuster movie poster background, deep teal and fiery orange anamorphic cinematic lighting, dramatic theatrical smoke, moody dark shadows, 8k wallpaper, no text.",
+    "mood_keywords": [
+      "hollywood",
+      "teal and orange",
+      "anamorfico",
+      "drammatico",
+      "grande schermo"
+    ],
+    "palette": {
+      "primary": "#00A896",
+      "secondary": "#FF6B00",
+      "accent": "#050507",
+      "background": "#04070A",
+      "text": "#FFFFFF",
+      "glow": "#FF6B00",
+      "gradient": "linear-gradient(135deg, #00A896 0%, #FF6B00 100%)"
+    },
+    "preview_image": "/style_previews/cinematografico.jpg"
+  },
+  {
+    "id": "classico",
+    "name": "Classico Rinascimentale",
+    "folder": "Classico",
+    "category": "biglietto_invito",
+    "category_label": "Invito Esclusivo & VIP Pass",
+    "icon": "🏛️",
+    "visual_direction": "Simmetria monumentale, capitelli neoclassici, pergamena avorio e nobiltà senza tempo.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Classico. VISUAL DIRECTION: Classical Renaissance editorial design, architectural symmetry, elegant Roman serif typography, ivory parchment, gold filigree accents, timeless nobility.",
+    "prompt_minimal": "Classical Italian Renaissance palace poster background, monumental marble arches, warm golden chiaroscuro lighting, subtle antique gold filigree, prestigious 8k, no text.",
+    "mood_keywords": [
+      "rinascimento",
+      "monumentale",
+      "neoclassico",
+      "simmetria",
+      "nobiltà"
+    ],
+    "palette": {
+      "primary": "#D4AF37",
+      "secondary": "#F5F5F0",
+      "accent": "#2B261D",
+      "background": "#12100C",
+      "text": "#F5F5F0",
+      "glow": "#D4AF37",
+      "gradient": "linear-gradient(135deg, #D4AF37 0%, #F5F5F0 100%)"
+    },
+    "preview_image": "/style_previews/classico.jpg"
+  },
+  {
+    "id": "colorato",
+    "name": "Colorato & Dynamic Prism",
+    "folder": "Colorato",
+    "category": "copertina_social",
+    "category_label": "Copertina & Grafica Social",
+    "icon": "🌈",
+    "visual_direction": "Rifrazioni prismatiche della luce, gradienti cromatici fluidi e ritmo visivo travolgente.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Colorato. VISUAL DIRECTION: Vibrant colorful graphic design, energetic composition, bold color combinations, playful visual rhythm, saturated palette, dynamic shapes, joyful and expressive visual language, contemporary color theory application.",
+    "prompt_minimal": "Prismatic refraction poster background, fluid chromatic rainbow gradients intersecting on dark silk, joyful spectrum of light, contemporary visual art, 8k, no text.",
+    "mood_keywords": [
+      "prismatico",
+      "spettro solare",
+      "fluido",
+      "arcobaleno chic",
+      "color explosion"
+    ],
+    "palette": {
+      "primary": "#00FF88",
+      "secondary": "#00E7FF",
+      "accent": "#FF1E9E",
+      "background": "#090117",
+      "text": "#FFFFFF",
+      "glow": "#00FF88",
+      "gradient": "linear-gradient(135deg, #00FF88 0%, #00E7FF 50%, #FF1E9E 100%)"
+    },
+    "preview_image": "/style_previews/colorato.jpg"
+  },
+  {
+    "id": "corporate_tech",
+    "name": "Corporate Tech & Enterprise",
+    "folder": "Corporate Tech",
+    "category": "volantino_promo",
+    "category_label": "Volantino & Flyer Promo",
+    "icon": "💼",
+    "visual_direction": "Linee architettoniche pulite in vetro e acciaio con gradienti blu istituzionale.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Corporate Tech. VISUAL DIRECTION: Premium technology corporate design, structured grid, modern typography, sophisticated digital aesthetic, business technology visual language, clean corporate tech feel, professional technology publication design, contemporary corporate tech aesthetic.",
+    "prompt_minimal": "Executive corporate tech background, architectural glass and steel skyscrapers with subtle blue atmospheric gradient, sophisticated boardroom confidence, clean 8k render, no text.",
+    "mood_keywords": [
+      "enterprise",
+      "corporate",
+      "affidabilità",
+      "architettura moderna",
+      "executive"
+    ],
+    "palette": {
+      "primary": "#0070F3",
+      "secondary": "#BFC7D5",
+      "accent": "#0A101D",
+      "background": "#040914",
+      "text": "#F4EFE6",
+      "glow": "#0070F3",
+      "gradient": "linear-gradient(135deg, #0070F3 0%, #00DFD8 100%)"
+    },
+    "preview_image": "/style_previews/corporate_tech.jpg"
+  },
+  {
+    "id": "creativo",
+    "name": "Creativo & Abstract Fusion",
+    "folder": "Creativo",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "🎨",
+    "visual_direction": "Forme fluide astratte tridimensionali, gradienti cromatici sorprendenti e libertà espressiva totale.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Creativo. VISUAL DIRECTION: Creative experimental graphic design, expressive forms, fluid textures, artistic innovation, contemporary digital art, bold visionary composition.",
+    "prompt_minimal": "Abstract creative digital art poster background, floating iridescent liquid ribbons, vibrant multicolored gradients, contemporary museum art style, 8k, no text.",
+    "mood_keywords": [
+      "creativo",
+      "arte astratta",
+      "fluido 3d",
+      "sperimentale",
+      "libertà visiva"
+    ],
+    "palette": {
+      "primary": "#FF1E9E",
+      "secondary": "#00E7FF",
+      "accent": "#FFE600",
+      "background": "#0B0514",
+      "text": "#FFFFFF",
+      "glow": "#FF1E9E",
+      "gradient": "linear-gradient(135deg, #FF1E9E 0%, #00E7FF 50%, #FFE600 100%)"
+    },
+    "preview_image": "/style_previews/creativo.jpg"
+  },
+  {
+    "id": "editoriale",
+    "name": "Editoriale Magazine Spread",
+    "folder": "Editoriale",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "📰",
+    "visual_direction": "Griglia a colonne precisa, texture di carta naturale e accento rosso tipografico d'impatto.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Editoriale. VISUAL DIRECTION: Premium editorial layout, magazine-style composition, sophisticated typography, strong visual hierarchy, refined grid system, high-end publication aesthetic, professional art direction, contemporary magazine design.",
+    "prompt_minimal": "Contemporary art magazine cover background, structured column grid, clean creamy paper texture with subtle ink grain, refined editorial balance, 8k publication quality, no text.",
+    "mood_keywords": [
+      "magazine",
+      "carta cotone",
+      "griglia editoriale",
+      "svizzero",
+      "culturale"
+    ],
+    "palette": {
+      "primary": "#F7F4EE",
+      "secondary": "#202020",
+      "accent": "#C53030",
+      "background": "#121214",
+      "text": "#F7F4EE",
+      "glow": "#C53030",
+      "gradient": "linear-gradient(135deg, #F7F4EE 0%, #C53030 100%)"
+    },
+    "preview_image": "/style_previews/editoriale.jpg"
+  },
+  {
+    "id": "elegante",
+    "name": "Elegante Haute Couture",
+    "folder": "Elegante",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "✨",
+    "visual_direction": "Composizione sobria e sartoriale con ombre morbide e finiture dorate satin.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Elegante. VISUAL DIRECTION: Luxury editorial design, sophisticated serif typography, refined details, restrained composition, premium materials aesthetic, gold or metallic accents, deep rich palette, high-end brand identity feel.",
+    "prompt_minimal": "Haute couture editorial poster background, velvety deep black background, soft satin shadows, fine golden hairline accents, quiet luxury, 8k high fashion, no text.",
+    "mood_keywords": [
+      "eleganza",
+      "haute couture",
+      "sartoriale",
+      "quiet luxury",
+      "perfezione formale"
+    ],
+    "palette": {
+      "primary": "#E5D4C0",
+      "secondary": "#D4A017",
+      "accent": "#121214",
+      "background": "#09090B",
+      "text": "#E5D4C0",
+      "glow": "#D4A017",
+      "gradient": "linear-gradient(135deg, #E5D4C0 0%, #D4A017 100%)"
+    },
+    "preview_image": "/style_previews/elegante.jpg"
+  },
+  {
+    "id": "fashion",
+    "name": "Fashion & Avant-Garde",
+    "folder": "Fashion",
+    "category": "copertina_social",
+    "category_label": "Copertina & Grafica Social",
+    "icon": "👠",
+    "visual_direction": "Panneggi di tessuti scultorei in movimento con luci da passerella parigina.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Fashion. VISUAL DIRECTION: High-fashion editorial design, expressive typography, sophisticated imagery, avant-garde composition, fashion magazine aesthetic, bold visual language, contemporary fashion design, high-end fashion publication feel.",
+    "prompt_minimal": "Vogue fashion week editorial background, sculptural fabric drapery in motion, monochromatic beige and obsidian shadows, modern art gallery lighting, 8k fashion photography, no text.",
+    "mood_keywords": [
+      "haute couture",
+      "passerella",
+      "panneggi scultorei",
+      "vogue chic",
+      "avanguardia"
+    ],
+    "palette": {
+      "primary": "#E5D4C0",
+      "secondary": "#1C1B1F",
+      "accent": "#D4A017",
+      "background": "#0B0B0D",
+      "text": "#E5D4C0",
+      "glow": "#E5D4C0",
+      "gradient": "linear-gradient(135deg, #E5D4C0 0%, #1C1B1F 100%)"
+    },
+    "preview_image": "/style_previews/fashion.jpg"
+  },
+  {
+    "id": "festival",
+    "name": "Festival Open Air",
+    "folder": "Festival",
+    "category": "locandina_evento",
+    "category_label": "Locandina Evento & Club",
+    "icon": "🎪",
+    "visual_direction": "Esplosioni di luce volumetrica, coriandoli olografici ed energia pura da grande palco estivo.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Festival. VISUAL DIRECTION: Dynamic festival poster design, energetic typography, vibrant visual elements, high-impact composition, event celebration aesthetic, bold festival visual language, energetic and exciting feel, contemporary event design.",
+    "prompt_minimal": "Epic music festival stage background, massive laser lights cutting through summer night sky, holographic confetti explosions, crowd energy glow, festival mainstage 8k wallpaper, no text.",
+    "mood_keywords": [
+      "festival estivo",
+      "mainstage",
+      "laser show",
+      "energia pura",
+      "open air"
+    ],
+    "palette": {
+      "primary": "#00FF88",
+      "secondary": "#FF1E9E",
+      "accent": "#0B001A",
+      "background": "#05000E",
+      "text": "#FFFFFF",
+      "glow": "#00FF88",
+      "gradient": "linear-gradient(135deg, #00FF88 0%, #FF1E9E 100%)"
+    },
+    "preview_image": "/style_previews/festival.jpg"
+  },
+  {
+    "id": "food_premium",
+    "name": "Gourmet & Food Premium",
+    "folder": "Food Premium",
+    "category": "menu_ristorazione",
+    "category_label": "Menu Ristorazione & Drink",
+    "icon": "🍷",
+    "visual_direction": "Superfici in ardesia scura, luci calde da studio fotografico e raffinatezza gastronomica stellata.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Food Premium. VISUAL DIRECTION: Premium food editorial design, appetizing hero imagery, elegant typography, refined composition, gastronomy aesthetic, warm food photography, premium restaurant visual language, sophisticated food publication feel.",
+    "prompt_minimal": "Michelin star restaurant menu background, dark slate stone texture, warm dramatic chef table spotlight, aromatic culinary mist and herbal accents, fine dining mood, 8k, no text.",
+    "mood_keywords": [
+      "alta cucina",
+      "gourmet",
+      "ardesia",
+      "chef table",
+      "luce d'atmosfera"
+    ],
+    "palette": {
+      "primary": "#D4A017",
+      "secondary": "#2E1A11",
+      "accent": "#FFF5EB",
+      "background": "#0B0A09",
+      "text": "#FFF5EB",
+      "glow": "#D4A017",
+      "gradient": "linear-gradient(135deg, #D4A017 0%, #2E1A11 100%)"
+    },
+    "preview_image": "/style_previews/food_premium.jpg"
+  },
+  {
+    "id": "fotografico",
+    "name": "Fotografico Gallery Showcase",
+    "folder": "Fotografico",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "📷",
+    "visual_direction": "Minimalismo da galleria fotografica, cornice passpartout e profondità di campo artistica.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Fotografico. VISUAL DIRECTION: Contemporary photography exhibition poster, sophisticated gallery framing, exquisite tonal gradation, refined monochrome and duotone palette, museum publication aesthetic.",
+    "prompt_minimal": "Contemporary photography gallery poster background, delicate fine art black and white tonal range, subtle gallery wall lighting, minimalist museum aesthetic, 8k, no text.",
+    "mood_keywords": [
+      "fotografia d'autore",
+      "galleria",
+      "passpartout",
+      "bianco e nero",
+      "profondità"
+    ],
+    "palette": {
+      "primary": "#FFFFFF",
+      "secondary": "#888888",
+      "accent": "#111111",
+      "background": "#070709",
+      "text": "#FFFFFF",
+      "glow": "#888888",
+      "gradient": "linear-gradient(135deg, #FFFFFF 0%, #888888 100%)"
+    },
+    "preview_image": "/style_previews/fotografico.jpg"
+  },
+  {
+    "id": "futuristico",
+    "name": "Futuristico Neo-Tokyo",
+    "folder": "Futuristico",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "🚀",
+    "visual_direction": "Metropoli Neo-Tokyo, ologrammi fluttuanti, navette al plasma e orizzonte cibernetico 2099.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Futuristico. VISUAL DIRECTION: Futuristic sci-fi cityscape, holographic data HUDs, glowing plasma trails, towering mega-structures, deep neon cyan and crimson lighting, 8k cinematic future.",
+    "prompt_minimal": "Futuristic sci-fi mega-city poster background, glowing neon blue holograms floating over dark skyscrapers, flying plasma lights, cyberpunk atmosphere, 8k wallpaper, no text.",
+    "mood_keywords": [
+      "neo-tokyo",
+      "ologrammi",
+      "futuro 2099",
+      "plasma glow",
+      "cibernetica"
+    ],
+    "palette": {
+      "primary": "#00F0FF",
+      "secondary": "#FF0055",
+      "accent": "#0D0221",
+      "background": "#04000C",
+      "text": "#FFFFFF",
+      "glow": "#00F0FF",
+      "gradient": "linear-gradient(135deg, #00F0FF 0%, #FF0055 100%)"
+    },
+    "preview_image": "/style_previews/futuristico.jpg"
+  },
+  {
+    "id": "giornalistico",
+    "name": "Giornalistico & News Headline",
+    "folder": "Giornalistico",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "🗞️",
+    "visual_direction": "Layout a colonne tipografiche di piombo, forte densità informativa e contrasto bianco/nero.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Giornalistico. VISUAL DIRECTION: Modern news editorial design, information hierarchy, bold headlines, structured visual layout, newspaper-inspired aesthetic, clear information zones, professional news publication feel, contemporary journalism design.",
+    "prompt_minimal": "Broadsheet newspaper press background, classic newsprint columns, bold black letterpress blocks, raw journalism authenticity, high contrast monochrome, 8k, no text.",
+    "mood_keywords": [
+      "giornalismo",
+      "prima pagina",
+      "stampa quotidiana",
+      "breaking news",
+      "caratteri piombo"
+    ],
+    "palette": {
+      "primary": "#111111",
+      "secondary": "#F5F5F3",
+      "accent": "#D90452",
+      "background": "#0A0A0A",
+      "text": "#F5F5F3",
+      "glow": "#D90452",
+      "gradient": "linear-gradient(135deg, #111111 0%, #D90452 100%)"
+    },
+    "preview_image": "/style_previews/giornalistico.jpg"
+  },
+  {
+    "id": "giovanile",
+    "name": "Giovanile Gen-Z Y2K",
+    "folder": "Giovanile",
+    "category": "copertina_social",
+    "category_label": "Copertina & Grafica Social",
+    "icon": "⚡",
+    "visual_direction": "Colori acidi lime e fucsia, forme bubble cromate e vibe estetica virale Gen-Z.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Giovanile. VISUAL DIRECTION: Fresh youthful graphic design, dynamic typography, playful shapes, energetic composition, bright colors, contemporary youth culture aesthetic, casual and approachable visual language, modern social media feel.",
+    "prompt_minimal": "Y2K cyber aesthetic poster background, metallic bubble shapes, bright lime green and electric violet neon gradients, digital stickers texture, Gen-Z viral aesthetic, 8k, no text.",
+    "mood_keywords": [
+      "gen-z",
+      "y2k",
+      "lime neon",
+      "bubble chrome",
+      "tiktok trend"
+    ],
+    "palette": {
+      "primary": "#B8FF00",
+      "secondary": "#FF00C7",
+      "accent": "#10002B",
+      "background": "#0A0017",
+      "text": "#FFFFFF",
+      "glow": "#B8FF00",
+      "gradient": "linear-gradient(135deg, #B8FF00 0%, #FF00C7 100%)"
+    },
+    "preview_image": "/style_previews/giovanile.jpg"
+  },
+  {
+    "id": "luxury",
+    "name": "Luxury VIP & Gold Foil",
+    "folder": "Luxury",
+    "category": "biglietto_invito",
+    "category_label": "Invito Esclusivo & VIP Pass",
+    "icon": "👑",
+    "visual_direction": "Marmo nero imperiale, lamine d'oro fluide 3D, riflessi champagne e tipografia serif nobiliare.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Luxury. VISUAL DIRECTION: Luxury editorial design, sophisticated serif typography, refined details, restrained composition, premium materials aesthetic, gold or metallic accents, deep rich palette, high-end brand identity feel.",
+    "prompt_minimal": "Ultra-luxury event poster background, dark Italian black marble texture, liquid molten gold veins, subtle champagne bokeh lighting, prestigious VIP gala atmosphere, 8k render, no text.",
+    "mood_keywords": [
+      "lusso",
+      "oro 3D",
+      "marmo nero",
+      "gala vip",
+      "haute couture"
+    ],
+    "palette": {
+      "primary": "#D4A017",
+      "secondary": "#F4EFE6",
+      "accent": "#050507",
+      "background": "#060608",
+      "text": "#F4EFE6",
+      "glow": "#D4A017",
+      "gradient": "linear-gradient(135deg, #D4A017 0%, #F4EFE6 50%, #050507 100%)"
+    },
+    "preview_image": "/style_previews/luxury.jpg"
+  },
+  {
+    "id": "minimalista",
+    "name": "Minimalista Studio",
+    "folder": "Minimalista",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "⚪",
+    "visual_direction": "Spazio negativo generoso, griglia svizzera precisa, contrasto sottile ed eleganza editoriale.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Minimalista. VISUAL DIRECTION: Clean, refined, contemporary minimalism. Generous negative space, precise grid, elegant typography, restrained visual elements, subtle neutral palette, sophisticated editorial composition.",
+    "prompt_minimal": "Minimal graphic design poster, clean negative space, precise swiss grid, refined modern typography, subtle monochrome palette with one delicate warm accent, editorial 8k quality, no text.",
+    "mood_keywords": [
+      "minimalismo",
+      "spazio negativo",
+      "precisione svizzera",
+      "raffinato",
+      "pulizia visiva"
+    ],
+    "palette": {
+      "primary": "#F4EFE6",
+      "secondary": "#1A1A1A",
+      "accent": "#C5A880",
+      "background": "#0D0D11",
+      "text": "#F4EFE6",
+      "glow": "#C5A880",
+      "gradient": "linear-gradient(135deg, #F4EFE6 0%, #C5A880 100%)"
+    },
+    "preview_image": "/style_previews/minimalista.jpg"
+  },
+  {
+    "id": "moda",
+    "name": "Moda Minimalist Chic",
+    "folder": "Moda",
+    "category": "copertina_social",
+    "category_label": "Copertina & Grafica Social",
+    "icon": "✨",
+    "visual_direction": "Contrasto bianco/nero assoluto, geometrie taglienti e silhouette minimal chic per brand di moda.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Moda. VISUAL DIRECTION: Minimalist chic fashion poster, sharp monochrome silhouettes, subtle warm gold accents, high-end lookbook feel, sophisticated studio lighting.",
+    "prompt_minimal": "High fashion runway minimalist poster background, sharp black and white studio lighting, elegant gold edge line, pure chic aesthetic, 8k, no text.",
+    "mood_keywords": [
+      "moda",
+      "minimal chic",
+      "monochrome",
+      "silhouette",
+      "passerella"
+    ],
+    "palette": {
+      "primary": "#FFFFFF",
+      "secondary": "#D4A017",
+      "accent": "#111111",
+      "background": "#050505",
+      "text": "#FFFFFF",
+      "glow": "#D4A017",
+      "gradient": "linear-gradient(135deg, #FFFFFF 0%, #D4A017 100%)"
+    },
+    "preview_image": "/style_previews/moda.jpg"
+  },
+  {
+    "id": "moderno",
+    "name": "Moderno Asimmetrico",
+    "folder": "Moderno",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "🔷",
+    "visual_direction": "Composizione asimmetrica contemporanea, forme geometriche sovrapposte e tensione dinamica.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Moderno. VISUAL DIRECTION: Contemporary editorial graphic design, balanced asymmetric composition, modern sans-serif typography, clean visual hierarchy, structured layout with dynamic tension, refined color palette, polished professional aesthetic.",
+    "prompt_minimal": "Contemporary modern graphic poster, asymmetric geometric tension, layered abstract shapes, clean high contrast colors with electric cyan accent, museum exhibition quality, no text.",
+    "mood_keywords": [
+      "moderno",
+      "asimmetrico",
+      "geometria dinamica",
+      "tensione visiva",
+      "cutting-edge"
+    ],
+    "palette": {
+      "primary": "#00E7FF",
+      "secondary": "#0D1117",
+      "accent": "#5D2EFF",
+      "background": "#05070B",
+      "text": "#FFFFFF",
+      "glow": "#00E7FF",
+      "gradient": "linear-gradient(135deg, #00E7FF 0%, #5D2EFF 100%)"
+    },
+    "preview_image": "/style_previews/moderno.jpg"
+  },
+  {
+    "id": "naturale",
+    "name": "Naturale & Eco Botanical",
+    "folder": "Naturale",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "🌿",
+    "visual_direction": "Ombre di foglie tropicali, palette salvia e pietra calcarea, atmosfera rilassante e organica.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Naturale. VISUAL DIRECTION: Organic editorial design, natural forms, soft textures, earthy visual language, botanical elements, sustainable aesthetic, calm and grounded composition, natural color palette.",
+    "prompt_minimal": "Serene botanical poster background, soft dappled sunlight through monstera leaves, sage green and warm limestone texture, mindful calm breathing atmosphere, 8k editorial, no text.",
+    "mood_keywords": [
+      "botanico",
+      "verde salvia",
+      "benessere",
+      "organico",
+      "eco-friendly"
+    ],
+    "palette": {
+      "primary": "#588157",
+      "secondary": "#DAD7CD",
+      "accent": "#344E41",
+      "background": "#131A14",
+      "text": "#DAD7CD",
+      "glow": "#588157",
+      "gradient": "linear-gradient(135deg, #588157 0%, #DAD7CD 100%)"
+    },
+    "preview_image": "/style_previews/naturale.jpg"
+  },
+  {
+    "id": "pop",
+    "name": "Pop Art & Vibrant Color",
+    "folder": "Pop",
+    "category": "copertina_social",
+    "category_label": "Copertina & Grafica Social",
+    "icon": "🍭",
+    "visual_direction": "Pattern a mezzetinte (halftone), blocchi di colore solari giallo/fucsia/ciano e spirito spensierato.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Pop. VISUAL DIRECTION: Bold pop graphic design, vibrant colors, expressive typography, playful visual elements, pop culture references, comic-inspired aesthetics, high-energy visual language, contemporary pop art feel.",
+    "prompt_minimal": "Vibrant modern Pop Art poster background, colorful halftone dot patterns, bold yellow and magenta color blocks, energetic playful shapes, comic book chic, 8k resolution, no text.",
+    "mood_keywords": [
+      "pop art",
+      "colorato",
+      "halftone",
+      "fumetto contemporaneo",
+      "allegria virale"
+    ],
+    "palette": {
+      "primary": "#FFE600",
+      "secondary": "#FF1E9E",
+      "accent": "#00E7FF",
+      "background": "#10002B",
+      "text": "#FFFFFF",
+      "glow": "#FFE600",
+      "gradient": "linear-gradient(135deg, #FFE600 0%, #FF1E9E 100%)"
+    },
+    "preview_image": "/style_previews/pop.jpg"
+  },
+  {
+    "id": "professionale",
+    "name": "Professionale Executive",
+    "folder": "Professionale",
+    "category": "volantino_promo",
+    "category_label": "Volantino & Flyer Promo",
+    "icon": "👔",
+    "visual_direction": "Griglia rigorosa, gerarchia cristallina e autorevolezza per business e comunicazioni ufficiali.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Professionale. VISUAL DIRECTION: Professional corporate graphic design, precise grid, clear hierarchy, polished visual identity, structured information design, clean typography, corporate color palette, business communication aesthetic.",
+    "prompt_minimal": "Clean professional corporate design background, subtle dark navy grid structure, precise linear information accents, executive confidence, 8k render, no text.",
+    "mood_keywords": [
+      "professionale",
+      "corporate",
+      "precisione",
+      "business",
+      "autorevolezza"
+    ],
+    "palette": {
+      "primary": "#0070F3",
+      "secondary": "#E2E8F0",
+      "accent": "#0F172A",
+      "background": "#020617",
+      "text": "#F8FAFC",
+      "glow": "#0070F3",
+      "gradient": "linear-gradient(135deg, #0070F3 0%, #0F172A 100%)"
+    },
+    "preview_image": "/style_previews/professionale.jpg"
+  },
+  {
+    "id": "retro_futuristico",
+    "name": "Retrò Futuristico Synthwave",
+    "folder": "Retròo Futuristico",
+    "category": "locandina_evento",
+    "category_label": "Locandina Evento & Club",
+    "icon": "🌆",
+    "visual_direction": "Estetica anni 80 con griglie prospettiche laser, orizzonte cromato e bagliori al neon fucsia e ciano.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Retròò Futuristico. VISUAL DIRECTION: Retròo-futuristic graphic design, vintage technology aesthetics, futuristic geometry, nostalgic atmosphere, 80s inspired color palette, synthwave visual language, analog-digital fusion, nostalgic future vision.",
+    "prompt_minimal": "Retròo-futuristic 80s synthwave poster background, neon wireframe horizon, chrome geometric pyramids, vibrant magenta and electric cyan lasers, moody CRT scanlines, 8k render, no text.",
+    "mood_keywords": [
+      "synthwave",
+      "80s neon",
+      "retrofuturismo",
+      "laser grid",
+      "cyberpunk nostalgy"
+    ],
+    "palette": {
+      "primary": "#FF1E9E",
+      "secondary": "#00E7FF",
+      "accent": "#2A103F",
+      "background": "#050507",
+      "text": "#F4EFE6",
+      "glow": "#FF1E9E",
+      "gradient": "linear-gradient(135deg, #FF1E9E 0%, #5D2EFF 50%, #00E7FF 100%)"
+    },
+    "preview_image": "/style_previews/retro_futuristico.jpg"
+  },
+  {
+    "id": "rustico",
+    "name": "Rustico Casale & Trattoria",
+    "folder": "Rustico",
+    "category": "menu_ristorazione",
+    "category_label": "Menu Ristorazione & Drink",
+    "icon": "🪵",
+    "visual_direction": "Texture di legno massello, carta pergamena invecchiata, ambra calda e sfumature di vino rosso rubino.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Rustico. VISUAL DIRECTION: Rustic graphic design, natural textures, handcrafted typography, warm organic aesthetic, earthy color palette, natural materials feel, authentic and grounded visual language, traditional craftsmanship.",
+    "prompt_minimal": "Minimal rustic Italian osteria menu background, aged vintage parchment paper texture, warm dark oak wood frame, artistic subtle red wine swirl splash, warm artisanal trattoria mood, 9:16 aspect ratio, no text.",
+    "mood_keywords": [
+      "rustico",
+      "trattoria",
+      "legno massello",
+      "vino rubino",
+      "tradizione italiana"
+    ],
+    "palette": {
+      "primary": "#7B1113",
+      "secondary": "#E2B874",
+      "accent": "#22120C",
+      "background": "#140A06",
+      "text": "#E2B874",
+      "glow": "#7B1113",
+      "gradient": "linear-gradient(135deg, #7B1113 0%, #E2B874 100%)"
+    },
+    "preview_image": "/style_previews/rustico.jpg"
+  },
+  {
+    "id": "sobrio",
+    "name": "Sobrio & Quiet Luxury",
+    "folder": "Sobrio",
+    "category": "volantino_promo",
+    "category_label": "Volantino & Flyer Promo",
+    "icon": "🏛️",
+    "visual_direction": "Eleganza sussurrata in toni antracite e grigio perla con spaziatura meticolosa.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Sobrio. VISUAL DIRECTION: Restrained professional editorial design, clean typography, subtle muted palette, structured layout, understated elegance, minimal visual effects, corporate sophistication, quiet confidence.",
+    "prompt_minimal": "Quiet luxury corporate background, fine anthracite charcoal texture, subtle warm grey architectural shadows, understated executive restraint, 8k museum quality, no text.",
+    "mood_keywords": [
+      "sobrietà",
+      "quiet luxury",
+      "antracite",
+      "rigore",
+      "istituzionale"
+    ],
+    "palette": {
+      "primary": "#9E9E9E",
+      "secondary": "#F5F5F5",
+      "accent": "#1A1A1A",
+      "background": "#0F0F11",
+      "text": "#F5F5F5",
+      "glow": "#9E9E9E",
+      "gradient": "linear-gradient(135deg, #9E9E9E 0%, #1A1A1A 100%)"
+    },
+    "preview_image": "/style_previews/sobrio.jpg"
+  },
+  {
+    "id": "social_media",
+    "name": "Social Media Scroll Stopper",
+    "folder": "Social media",
+    "category": "copertina_social",
+    "category_label": "Copertina & Grafica Social",
+    "icon": "📱",
+    "visual_direction": "Sfera di vetro 3D con aura iridescente studiata per fermare il pollice durante lo scroll rapido.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Social Media. VISUAL DIRECTION: High-impact social media graphic, immediate visual hierarchy, bold headline, optimized composition, social platform aesthetic, contemporary social media design, engaging visual language, scroll-stopping feel.",
+    "prompt_minimal": "Ultra dynamic scroll-stopping social media background, fluid 3D glass orb floating in vibrant iridescent neon aura, thumb-stopping visual hook, high engagement aesthetic, 8k, no text.",
+    "mood_keywords": [
+      "scroll stopper",
+      "3d glass",
+      "iridescente",
+      "viral hook",
+      "social engagement"
+    ],
+    "palette": {
+      "primary": "#FF1E9E",
+      "secondary": "#00E7FF",
+      "accent": "#080014",
+      "background": "#05000A",
+      "text": "#FFFFFF",
+      "glow": "#00E7FF",
+      "gradient": "linear-gradient(135deg, #FF1E9E 0%, #00E7FF 100%)"
+    },
+    "preview_image": "/style_previews/social_media.jpg"
+  },
+  {
+    "id": "street",
+    "name": "Street & Urban Grime",
+    "folder": "Street",
+    "category": "locandina_evento",
+    "category_label": "Locandina Evento & Club",
+    "icon": "🛹",
+    "visual_direction": "Texture di cemento urbano, stencil spray e grafica tagliente da cultura metropolitana.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Street. VISUAL DIRECTION: Urban street graphic design, bold typography, raw textures, dynamic composition, contemporary culture, street art aesthetic, urban visual language, gritty and authentic feel.",
+    "prompt_minimal": "Raw underground street art poster background, distressed concrete wall texture, stencil spray paint drips, dynamic wheatpaste poster tearing, gritty asphalt vibe, 8k, no text.",
+    "mood_keywords": [
+      "streetwear",
+      "underground",
+      "graffiti",
+      "cemento grezzo",
+      "skate culture"
+    ],
+    "palette": {
+      "primary": "#FF6B00",
+      "secondary": "#FFFFFF",
+      "accent": "#141416",
+      "background": "#0D0E10",
+      "text": "#FFFFFF",
+      "glow": "#FF6B00",
+      "gradient": "linear-gradient(135deg, #FF6B00 0%, #D90452 100%)"
+    },
+    "preview_image": "/style_previews/street.jpg"
+  },
+  {
+    "id": "tecnico",
+    "name": "Tecnico Blueprint & Schematic",
+    "folder": "Tecnico",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "📐",
+    "visual_direction": "Blueprint millimetrico, linee di quota ingegneristiche e precisione da disegno tecnico CAD.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Tecnico. VISUAL DIRECTION: Technical information design, structured grids, precise labels, diagrams, analytical aesthetic, engineering documentation feel, clean technical typography, systematic visual organization.",
+    "prompt_minimal": "Cyan blueprint engineering schematic poster background, precise mathematical grid lines, floating vector dimensions and coordinates, clean architectural drawing aesthetics, 8k, no text.",
+    "mood_keywords": [
+      "blueprint",
+      "cad",
+      "disegno tecnico",
+      "quote millimetriche",
+      "ingegneria"
+    ],
+    "palette": {
+      "primary": "#00E7FF",
+      "secondary": "#0070F3",
+      "accent": "#0A192F",
+      "background": "#040D1A",
+      "text": "#E2F1FF",
+      "glow": "#00E7FF",
+      "gradient": "linear-gradient(135deg, #00E7FF 0%, #0070F3 100%)"
+    },
+    "preview_image": "/style_previews/tecnico.jpg"
+  },
+  {
+    "id": "tecnologico",
+    "name": "Tecnologico & Cyber Grid",
+    "folder": "Tecnologico",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "⚡",
+    "visual_direction": "Griglie vettoriali, nodi di dati luminosi e precisione ingegneristica su sfondo blu notte profondo.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Tecnologico. VISUAL DIRECTION: Modern technology editorial design, digital interface aesthetics, geometric elements, clean technical layout, structured information design, blue and white palette with accent colors, precision engineering feel, corporate tech identity.",
+    "prompt_minimal": "Futuristic quantum tech poster background, glowing deep navy circuit lines, holographic data grid, floating optical glass nodes, clean precision engineering aesthetics, 8k, no text.",
+    "mood_keywords": [
+      "high-tech",
+      "circuiti",
+      "olografico",
+      "precisione",
+      "quantum computing"
+    ],
+    "palette": {
+      "primary": "#00E7FF",
+      "secondary": "#5D2EFF",
+      "accent": "#050B14",
+      "background": "#030712",
+      "text": "#F4EFE6",
+      "glow": "#00E7FF",
+      "gradient": "linear-gradient(135deg, #00E7FF 0%, #5D2EFF 100%)"
+    },
+    "preview_image": "/style_previews/tecnologico.jpg"
+  },
+  {
+    "id": "vintage",
+    "name": "Vintage & Mid-Century Retròo",
+    "folder": "Vintage",
+    "category": "poster_grafico",
+    "category_label": "Poster Grafico & Design",
+    "icon": "📻",
+    "visual_direction": "Colori terrosi terracotta e ottanio con texture di serigrafia artigianale anni '60.",
+    "prompt_full": "Create a premium visual style reference image . STYLE: Vintage. VISUAL DIRECTION: Vintage editorial design, retro typography, aged textures, nostalgic visual aesthetic, warm muted palette, classic composition, handcrafted feel, mid-century inspired design language.",
+    "prompt_minimal": "Authentic 1960s mid-century poster background, weathered aged craft paper, warm terracotta and muted teal shapes, organic printmaking texture, timeless nostalgia, 8k, no text.",
+    "mood_keywords": [
+      "vintage",
+      "anni 60",
+      "serigrafia",
+      "carta invecchiata",
+      "nostalgia"
+    ],
+    "palette": {
+      "primary": "#E07A5F",
+      "secondary": "#3D405B",
+      "accent": "#F4F1DE",
+      "background": "#1A1817",
+      "text": "#F4F1DE",
+      "glow": "#E07A5F",
+      "gradient": "linear-gradient(135deg, #E07A5F 0%, #3D405B 100%)"
+    },
+    "preview_image": "/style_previews/vintage.jpg"
+  }
+]
