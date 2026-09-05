@@ -5327,6 +5327,11 @@ select:focus {
   display: block;
   z-index: 0;
   pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: strict;
+  image-rendering: auto;
 }
 
 /* Studio Translucent Layering (Cosmic Field shines through) */
@@ -5345,19 +5350,22 @@ select:focus {
 }
 
 .studio-sidebar {
-  background: rgba(9, 10, 18, 0.78) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  background: rgba(9, 10, 18, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .studio-header {
-  background: rgba(5, 5, 7, 0.78) !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
+  background: rgba(5, 5, 7, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transform: translate3d(0, 0, 0);
 }
 
 .prompt-bar-section {
-  background: linear-gradient(180deg, rgba(5, 5, 7, 0.78) 75%, transparent) !important;
+  background: linear-gradient(180deg, rgba(5, 5, 7, 0.82) 75%, transparent) !important;
 }
 
 .studio-canvas-container {
@@ -5365,9 +5373,10 @@ select:focus {
 }
 
 .canvas-empty-welcome {
-  background: rgba(9, 10, 18, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(9, 10, 18, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(93, 46, 255, 0.22);
   border-radius: 20px;
+  transform: translate3d(0, 0, 0);
 }
